@@ -12,7 +12,7 @@
 1. 毎回`.env`を作成するのが面倒
 2. 環境変数名を覚えられない
 3. `op://<vault>/<item>/<field>`という参照パスが長くて覚えられない。特に日本語で項目名を保存するとIDが含まれるので、毎回コピペが必要
-4. `op run --env-file <item-name> -- <command>`というコマンドが長く、タイプするのが大変
+4. `op run --env-file <item-name> -- <command>`コマンドが長い
 
 ## `opz`のゴール
 
