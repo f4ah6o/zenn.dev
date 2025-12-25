@@ -11,15 +11,15 @@
 
 1. 毎回`.env`を作成するのが面倒
 2. 環境変数名を覚えられない
-3. `op://foo/bar/baz`という参照パスが長くて覚えられない。特に日本語で項目名を保存するとIDが含まれるので、毎回コピペが必要
-4. `op run --env-file foo -- bar`というコマンドが長く、タイプするのが大変
+3. `op://<vault>/<item>/<field>`という参照パスが長くて覚えられない。特に日本語で項目名を保存するとIDが含まれるので、毎回コピペが必要
+4. `op run --env-file <item-name> -- <command>`というコマンドが長く、タイプするのが大変
 
 ## `opz`のゴール
 
 ### 1. 無駄なくコマンドを実行したい
 
 ```bash
-opz foo -- bar
+opz <item-name> -- <command>
 ```
 
 項目名とコマンドを指定するだけ。覚えることも少なく、サッと実行できます。
@@ -27,7 +27,7 @@ opz foo -- bar
 ### 2. `.env`も簡単に作りたい
 
 ```bash
-opz gen foo [.env]
+opz gen <item-name> [.env]
 ```
 
 ファイルだけ作りたい時もサクッと対応できます。
@@ -36,8 +36,8 @@ opz gen foo [.env]
 
 ## 覚えること/覚えられること
 
-* `foo`: 1Passwordに登録した項目名
-* `bar`: 実行したいコマンド
+* `<item-name>`: 1Passwordに登録した項目名
+* `<command>`: 実行したいコマンド
 
 これだけ覚えればOK。前述の`op run`のつらさは全部解消されます。
 
@@ -61,23 +61,23 @@ cargo install opz
 
 ```bash
 # 項目名を指定してコマンドを実行
-opz foo -- bar
-# opz run foo -- bar  # 同じ意味
+opz <item-name> -- <command>
+# opz run <item-name> -- <command>  # 同じ意味
 ```
 
 ```bash
 # 出力先の.envファイルを指定
-opz foo .env.production -- bar
+opz <item-name> <.env-file> -- <command>
 ```
 
 ### サブコマンド
 
 ```bash
 # 項目をキーワード検索
-opz find api
+opz find <keyword>
 
 # .envファイルのみ生成
-opz gen foo .env
+opz gen <item-name> <.env-file>
 ```
 
 ## 動作フロー
