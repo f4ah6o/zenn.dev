@@ -22,8 +22,6 @@
 opz <item-name> -- <command>
 ```
 
-項目名とコマンドを指定するだけ。
-
 ### 2. `.env`の生成
 
 ```bash
