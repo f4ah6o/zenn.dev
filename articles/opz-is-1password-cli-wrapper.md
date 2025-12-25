@@ -28,7 +28,8 @@ opz <item-name> -- <command>
 opz gen <item-name> [.env]
 ```
 
-* 本当は`opx`という名前にしたかったのですが、既に存在していたので`opz`にしました
+### 名前について
+`opx`にしたかったのですが、[既に存在](https://crates.io/crates/opx)していました。
 
 ## 覚えること/覚えられること
 
