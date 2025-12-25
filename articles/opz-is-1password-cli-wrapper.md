@@ -22,15 +22,13 @@
 opz <item-name> -- <command>
 ```
 
-項目名とコマンドを指定するだけ。覚えることも少なく、サッと実行できます。
+項目名とコマンドを指定するだけ。
 
-### 2. `.env`も簡単に作りたい
+### 2. `.env`の生成
 
 ```bash
 opz gen <item-name> [.env]
 ```
-
-ファイルだけ作りたい時もサクッと対応できます。
 
 * 本当は`opx`という名前にしたかったのですが、既に存在していたので`opz`にしました
 
@@ -39,9 +37,9 @@ opz gen <item-name> [.env]
 * `<item-name>`: 1Passwordに登録した項目名
 * `<command>`: 実行したいコマンド
 
-これだけ覚えればOK。前述の`op run`のつらさは全部解消されます。
-
 ## 1Passwordでの設定
+
+コマンド実行に必要な環境変数はすべてitemに保存しておきます。
 
 1. 各フィールドのラベルに環境変数名を入力する（例: `API_KEY`）
 2. シークレット以外の情報も登録する（例: APIのURLなど）
@@ -49,7 +47,10 @@ opz gen <item-name> [.env]
 
 ## 使い方
 
-* `op`が使える状態であることが前提です
+### 前提
+
+* `op`を設定済み
+* `cargo`
 
 ### インストール
 
@@ -65,11 +66,6 @@ opz <item-name> -- <command>
 # opz run <item-name> -- <command>  # 同じ意味
 ```
 
-```bash
-# 出力先の.envファイルを指定
-opz <item-name> <.env-file> -- <command>
-```
-
 ### サブコマンド
 
 ```bash
@@ -77,7 +73,7 @@ opz <item-name> <.env-file> -- <command>
 opz find <keyword>
 
 # .envファイルのみ生成
-opz gen <item-name> <.env-file>
+opz gen <item-name> [env file name]
 ```
 
 ## 動作フロー
