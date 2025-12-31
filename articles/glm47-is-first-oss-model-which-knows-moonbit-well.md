@@ -1,27 +1,29 @@
 ---
-title: "GLM 4.7を使ってMoonbitでjsライブラリを書いてみた"
+title: "GLM 4.7を使ってMoonBitでjsライブラリを書いてみた"
 emoji: "🐰"
 type: "tech" 
 topics: ["moonbit","js","shift-jis"] 
-published: false
+published: true
 ---
+
+別のツールでShift_JIS対応が必要になり、MoonBitでdecoderを実装しました。実装にはClaude Opus 4.5とz.aiのGLM 4.7を使い分けて進めました。
 
 ## まとめ
 
-1. MoonbitのVibingでShift_JIS decoderをつくりました
-2. Opus4.5とz.aiのGLM 4.7を利用しました
-3. 主観ベースだとGLM悪くないです
+1. MoonBitでVibingしてShift_JIS decoderをつくりました
+2. Opus 4.5とz.aiのGLM 4.7を利用しました
+3. GLMはMoonBitの実装で実用的に使えました
 
 ## encoding_sjis
-成果物は以下
+成果物は以下で
 @[card](https://github.com/f4ah6o/encoding_sjis.mbt)
-別のツールから利用しており一応の動作を確認しています。
+別のツールから利用しており、一応の動作は確認しています。
 
-## Opus4.5とz.aiのGLM 4.7
+## Opus 4.5とz.aiのGLM 4.7
 当初はPlanをOpus、実装をGLMのように分けていましたが、Opusの利用制限に達してからはGLMで
 進めました。
 
-GLMはMoonbitに詳しいそうです。
+MoonBitのHongbo Zhang氏がGLMはMoonBitに詳しい最初のoss llm modelだとポストしていました。
 
 @[card](https://x.com/bobzhang1988/status/2005200552200921304)
 
@@ -34,9 +36,20 @@ Claude CodeでGLMを使うには環境変数の設定などが必要ですが、
 ## GLMの感想
 
 サブスクリプションでクラウド版を利用しました。
-かなり使ったつもりでも5h制限や週間制限まで使い切れませんでした。
+かなり使いましたが、5h制限や週間制限に達することはありませんでした。
 
 あるときは1h近く走り続けることがありました。
 
 また、いろいろやったけどできませんでした！と報告してくることがあり、好印象でした。
 @[card](https://github.com/f4ah6o/yyjj.mbt/issues/18)
+
+## Why MoonBit
+
+[Jw_cad](https://www.jwcad.net)という2D CADソフトがあります。おそらく日本でしか利用されていないため、関連するOSSが少ない状況です。
+Goでparserをつくり動くようになったものの、browser viewerで躓いていました。
+
+今回休暇の間にClaudeのHoliday giftやGLMのサブスクの割引があったので、試しにMoonBitでやってみたところうまくいってしまいました。
+
+1. Goで[jww parser](https://github.com/f4ah6o/jww-parser)を実装
+2. [MoonBitにport](https://github.com/f4ah6o/jww_parser.mbt)
+3. [SVGのViewer](https://github.com/f4ah6o/svg_jww.mbt)
