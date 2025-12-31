@@ -23,7 +23,7 @@ published: false
 当初はPlanをOpus、実装をGLMのように分けていましたが、Opusの利用制限に達してからはGLMで
 進めました。
 
-MoonBitのHongbo Zhang氏がGLMはMoonBitに詳しい最初のoss llm modelだポストしていました。
+MoonBitのHongbo Zhang氏がGLMはMoonBitに詳しい最初のoss llm modelだとポストしていました。
 
 @[card](https://x.com/bobzhang1988/status/2005200552200921304)
 
@@ -45,9 +45,8 @@ Claude CodeでGLMを使うには環境変数の設定などが必要ですが、
 
 ## Why MoonBit
 
-[Jw_cad](https://www.jwcad.net)という2D CADソフトがあるのですが、おそらく日本でしか利用されていないため関連するOSSが
-少ない状況です。
-そこでGoでparserをつくり、なんとか動くようになったものの、browser viewerで躓いておりました。
+[Jw_cad](https://www.jwcad.net)という2D CADソフトがあります。おそらく日本でしか利用されていないため、関連するOSSが少ない状況です。
+Goでparserをつくり動くようになったものの、browser viewerで躓いていました。
 
 今回休暇の間にClaudeのHoliday giftやGLMのサブスクの割引があったので、試しにMoonBitでやってみたところうまくいってしまいました。
 
