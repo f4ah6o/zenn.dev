@@ -15,17 +15,17 @@ published: false
 ## encoding_sjis
 成果物は以下
 @[card](https://github.com/f4ah6o/encoding_sjis.mbt)
-別のツールから利用しており一応の動作を確認
+別のツールから利用しており一応の動作を確認しています。
 
 ## Opus4.5とz.aiのGLM 4.7
 当初はPlanをOpus、実装をGLMのように分けていましたが、Opusの利用制限に達してからはGLMで
 進めました。
 
-z.aiのGLMはMoonbitに詳しいそうです。
+GLMはMoonbitに詳しいそうです。
 
 @[card](https://x.com/bobzhang1988/status/2005200552200921304)
 
-Claude CodeでGLMを使うには環境変数の設定などが必要ですが、切り替えとAPI keyの保全を両立するために1password cliのラッパーを作成しました。
+Claude CodeでGLMを使うには環境変数の設定などが必要ですが、切り替えの使い勝手とAPI keyの保全を両立するために1password cliのラッパーを作成しました。
 
 以下記事で紹介しています。`opz z.ai -- claude`でGLMが使えるようにしています。
 
@@ -38,5 +38,5 @@ Claude CodeでGLMを使うには環境変数の設定などが必要ですが、
 
 あるときは1h近く走り続けることがありました。
 
-またいろいろやったけどできませんでした！と報告してくることがあり、好印象でした。
+また、いろいろやったけどできませんでした！と報告してくることがあり、好印象でした。
 @[card](https://github.com/f4ah6o/yyjj.mbt/issues/18)
