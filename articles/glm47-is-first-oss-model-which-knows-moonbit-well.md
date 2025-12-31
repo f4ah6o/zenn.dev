@@ -6,4 +6,8 @@ topics: ["moonbit","js"]
 published: false
 ---
 
-Moonbitでjsライブラリを書いてみた。
+z.aiのGLMはMoonbitに詳しいそうです。
+
+@[card](https://x.com/bobzhang1988/status/2005200552200921304)
+
+Claude Codeで
