@@ -2,9 +2,15 @@
 title: "GLM 4.7を使ってMoonbitでjsライブラリを書いてみた"
 emoji: "🐰"
 type: "tech" 
-topics: ["moonbit","js"] 
+topics: ["moonbit","js","shift-jis"] 
 published: false
 ---
+
+## まとめ
+
+1. 
+2. 
+3. Holiday gift(claude code and GLM)
 
 z.aiのGLMはMoonbitに詳しいそうです。
 
