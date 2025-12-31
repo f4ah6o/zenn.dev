@@ -1,27 +1,29 @@
 ---
-title: "GLM 4.7を使ってMoonbitでjsライブラリを書いてみた"
+title: "GLM 4.7を使ってMoonBitでjsライブラリを書いてみた"
 emoji: "🐰"
 type: "tech" 
 topics: ["moonbit","js","shift-jis"] 
 published: false
 ---
 
+別のツールでShift_JIS対応が必要になり、MoonBitでdecoderを実装しました。実装にはClaude Opus 4.5とz.ai（智譜AI）のGLM 4.7を使い分けて進めました。
+
 ## まとめ
 
-1. MoonbitのVibingでShift_JIS decoderをつくりました
-2. Opus4.5とz.aiのGLM 4.7を利用しました
-3. 主観ベースだとGLM悪くないです
+1. MoonBitでVibing（AIとの対話による開発）してShift_JIS decoderをつくりました
+2. Opus 4.5とz.aiのGLM 4.7を利用しました
+3. GLMはMoonBitの実装で実用的に使えました
 
 ## encoding_sjis
 成果物は以下
 @[card](https://github.com/f4ah6o/encoding_sjis.mbt)
-別のツールから利用しており一応の動作を確認しています。
+別のツールから利用しており、動作確認済みです。
 
-## Opus4.5とz.aiのGLM 4.7
+## Opus 4.5とz.aiのGLM 4.7
 当初はPlanをOpus、実装をGLMのように分けていましたが、Opusの利用制限に達してからはGLMで
 進めました。
 
-GLMはMoonbitに詳しいそうです。
+MoonBit作者のBob Zhang氏がGLMはMoonBitに詳しいと述べています。
 
 @[card](https://x.com/bobzhang1988/status/2005200552200921304)
 
@@ -34,7 +36,7 @@ Claude CodeでGLMを使うには環境変数の設定などが必要ですが、
 ## GLMの感想
 
 サブスクリプションでクラウド版を利用しました。
-かなり使ったつもりでも5h制限や週間制限まで使い切れませんでした。
+かなり使いましたが、5h制限や週間制限に達することはありませんでした。
 
 あるときは1h近く走り続けることがありました。
 
