@@ -1,0 +1,8 @@
+title: "MoonBitで始めるProperty-Based Testing"
+summary: "MoonBitで始めるProperty-Based Testing"
+topics: ["MoonBit", "PBT"]
+published: false
+price: 0 # 有料の場合200〜5000
+# 本に含めるチャプターを順番に並べましょう
+chapters:
+  - reference-and-acknowledgement
