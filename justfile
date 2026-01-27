@@ -19,4 +19,6 @@ books:
     pnpx zenn-cli list:books
 
 dev:
-    pnpx zenn-cli preview
+    pnpx zenn-cli preview --open
+
+preview: dev
