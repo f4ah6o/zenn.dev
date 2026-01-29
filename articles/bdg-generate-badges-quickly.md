@@ -12,11 +12,14 @@ READMEによくあるBadgeを簡単につくれるcli`bdg`をつくりました�
 <!-- bdg:end -->
 
 ## 成果物
-- javascript(package.json), Rust(Cargo.toml), Moonbit(moon.mod.json)を認識
-- LicenseやGitHub Actionsも認識
-- README.mdにShields.ioの形式のリンクを自動挿入
 
 @[card](https://github.com/f4ah6o/bdg-rs)
+
+## 機能
+
+- JavaScript, Rust, Moonbitを認識
+- ライセンス、GitHub Actionsも認識
+- README.mdにShields.ioの形式のリンクを自動挿入
 
 ## 使い方
 
