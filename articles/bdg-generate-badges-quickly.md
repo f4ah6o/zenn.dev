@@ -17,7 +17,7 @@ READMEによくあるBadgeを簡単につくれるcli`bdg`をつくりました�
 
 ## 機能
 
-- JavaScript, Rust, Moonbitを認識
+- JavaScript(Node), Rust, Moonbitを認識
 - ライセンス、GitHub Actionsも認識
 - README.mdにShields.ioの形式のリンクを自動挿入
 
