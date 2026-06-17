@@ -64,6 +64,54 @@ skill として使ってみると、ポストのスクリーンショットに�
 最初に思いついたのが Vite プラグインです。
 Vite のアプリであれば、プラグインを設定するだけで同じ注釈 UI を追加できます。
 
+## 設定方法
+
+使う側で必要なのは、パッケージのインストールと `vite.config.ts` への追加です。
+
+```bash
+npm install @f12o/markable
+```
+
+Vite の設定では、通常のプラグインと同じように `plugins` へ追加します。
+
+```ts
+import { defineConfig } from "vite";
+import { markable } from "@f12o/markable/vite";
+
+export default defineConfig({
+  plugins: [
+    markable({
+      mode: "auto",
+      locale: "ja",
+      commentsFile: ".markable/comments.json",
+      endpoint: "/__markable/comments",
+      poweredBy: true,
+    }),
+  ],
+});
+```
+
+`mode: "auto"` にすると、Vite の開発時は review モード、本番ビルド時は feedback モードになります。
+開発中はレビュー用の「Mark」ボタンを出し、本番では利用者向けの「Feedback」ボタンを出す想定です。
+
+`commentsFile` は、開発サーバーで投稿された注釈を保存する JSON ファイルです。
+`endpoint` は、その JSON を読み書きするためのローカルエンドポイントです。
+静的な GitHub Pages では POST 先がないため、外部の保存先を設定しない限り、投稿内容はそのセッション内の表示に留まります。
+
+`locale` には `"en"` と `"ja"` を指定できます。
+ボタン、入力欄、保存後の表示など、Markable が注入する UI の文言が切り替わります。
+
+GitHub Issue に送る導線を出したい場合は、`issueRepo` を指定します。
+
+```ts
+markable({
+  mode: "auto",
+  issueRepo: "f4ah6o/markable",
+});
+```
+
+この設定では、コメント内容と対象ページの情報を含めた Issue 作成画面を開けます。
+
 ## 実装まで
 
 ChatGPT の Web チャットに相談したところ、Vite プラグインとして実装できそうだとわかりました。
