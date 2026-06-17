@@ -3,7 +3,7 @@ title: "1password-cli`op`のCLIラッパー`opz`を作った"
 emoji: "🔐" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["1password","op"] # タグ。["markdown", "rust", "aws"]のように指定する
-published: true # 公開設定（falseにすると下書き）
+published: false # 公開設定（falseにすると下書き）
 ---
 
 1Password CLIの`op`コマンドを使うと、1Passwordに保存しているシークレットを環境変数としてそのまま利用できます。

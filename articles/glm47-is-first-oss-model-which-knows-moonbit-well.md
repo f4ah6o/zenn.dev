@@ -3,7 +3,7 @@ title: "GLM 4.7を使ってMoonBitでjsライブラリを書いてみた"
 emoji: "🐰"
 type: "tech" 
 topics: ["moonbit","js","shift-jis"] 
-published: true
+published: false
 ---
 
 別のツールでShift_JIS対応が必要になり、MoonBitでdecoderを実装しました。実装にはClaude Opus 4.5とz.aiのGLM 4.7を使い分けて進めました。

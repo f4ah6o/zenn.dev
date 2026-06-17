@@ -3,7 +3,7 @@ title: "MoonBitからDuckDB-Wasmを利用してみた"
 emoji: "🐇"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: ["moonbit", "duckdb", "vibecoding"]
-published: true
+published: false
 ---
 ## 概要
 

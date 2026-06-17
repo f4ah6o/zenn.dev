@@ -3,7 +3,7 @@ title: "Skillのインストールを簡単にするcliを作った"
 emoji: "🪏"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["agentskills"]
-published: true
+published: false
 ---
 
 :::message alert
