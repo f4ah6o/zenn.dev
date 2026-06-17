@@ -1,5 +1,5 @@
 ---
-title: "`u-ichi/reviewable-html-workbench`を参考にWebアプリに注釈機能をつけるViteプラグインをつくりました"
+title: "既存のWebアプリに注釈UIを足すViteプラグイン「Markable」を作った"
 emoji: "😽" # アイキャッチとして使われる絵文字（1文字だけ）
 type: "tech" # tech: 技術記事 / idea: アイデア記事
 topics: ["vite", "plugin", "frontend"] # タグ。["markdown", "rust", "aws"]のように指定する
@@ -14,7 +14,7 @@ Webアプリに注釈とコメントの機能を追加する Vite プラグイ�
 @[card](https://github.com/f4ah6o/markable)
 
 動くサンプルはこちらです。
-別の方が作ったサンプルページに Markable を追加しています。
+別の方が作ったWebアプリのサンプルに Markable を追加しています。
 
 https://f4ah6o.github.io/markable/
 
@@ -22,11 +22,11 @@ Vue Todo デモでは、このように既存の画面へ注釈 UI を重ねて�
 
 ![Vue Todo デモに Markable の注釈 UI を重ねた画面](/images/markable-vite-plugin/vue-todo-markable.png)
 
-オリジナルのサンプルページと並べると、アプリ本体はそのままで、右下に feedback ボタンだけが追加されていることがわかります。
+[オリジナルのサンプルページ](https://hefengxian.github.io/vue3-ts-vite-vitest-todo/)と並べると、アプリ本体はそのままで、右下に feedback ボタンだけが追加されていることがわかります。
 
 ![オリジナルの Vue Todo デモと Markable を追加した Vue Todo デモの比較](/images/markable-vite-plugin/vue-todo-original-vs-markable.png)
 
-本番向けの feedback モードでは、右下にフィードバック送信用のボタンを表示します。
+本番向けの feedback モードでは、右下にフィードバックを想定したボタンを表示します。
 
 ![Vue Todo デモに feedback ボタンを表示した画面](/images/markable-vite-plugin/feedback-button.png)
 
@@ -36,6 +36,7 @@ Vue Todo デモでは、このように既存の画面へ注釈 UI を重ねて�
 
 登録後は、最近のマークとして画面上に残ります。
 JSON ボタンから、対象要素やビューポートなどを含むデータをコピーできます。
+エージェントと共有する想定です。
 
 ![Markable で登録したコメントが最近のマークとして表示された画面](/images/markable-vite-plugin/after-save.png)
 
@@ -51,7 +52,7 @@ MIT ライセンスで公開されています。
 @[card](https://github.com/u-ichi/reviewable-html-workbench)
 
 skill として使ってみると、ポストのスクリーンショットに近い見た目で注釈が生成されました。
-この UX は AI と人間のやり取りだけでなく、人間同士の不具合報告、要望、フィードバックにも使えそうだと感じました。
+この UX は AI と人間のやり取りだけでなく、人間同士の不具合報告、フィードバックにも使えそうだと感じました。
 
 ## Vite プラグインにした理由
 
@@ -69,7 +70,7 @@ Vite のアプリであれば、プラグインを設定するだけで同じ注
 使う側で必要なのは、パッケージのインストールと `vite.config.ts` への追加です。
 
 ```bash
-npm install @f12o/markable
+pnpm add @f12o/markable
 ```
 
 Vite の設定では、通常のプラグインと同じように `plugins` へ追加します。
@@ -101,21 +102,15 @@ export default defineConfig({
 `locale` には `"en"` と `"ja"` を指定できます。
 ボタン、入力欄、保存後の表示など、Markable が注入する UI の文言が切り替わります。
 
-GitHub Issue に送る導線を出したい場合は、`issueRepo` を指定します。
-
-```ts
-markable({
-  mode: "auto",
-  issueRepo: "f4ah6o/markable",
-});
-```
-
-この設定では、コメント内容と対象ページの情報を含めた Issue 作成画面を開けます。
+アプリ本体のコンポーネントは変更しません。
+Vite プラグインが HTML に Markable のクライアントスクリプトを注入します。
 
 ## 実装まで
 
-ChatGPT の Web チャットに相談したところ、Vite プラグインとして実装できそうだとわかりました。
-そのまま GitHub プラグインからリポジトリを操作し、コードまで書いてもらいました。
+初期実装はCodexもClaude Codeも使わず、チャットで進めました。
+Vite プラグインとして実装できそうだとわかり、そのまま GitHub プラグインからリポジトリを操作し、コードまで書いてもらいました。
 
 リポジトリの作成と GitHub Pages の設定は、iPhone のブラウザから行いました。
 パソコンを開かなくても、GitHub Pages にデプロイしたサンプルページまで確認できました。
+
+今後は、登録済みの注釈位置にピンを表示できるようにしたいです。
